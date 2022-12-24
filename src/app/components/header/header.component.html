@@ -1,0 +1,18 @@
+<header>
+    <nav>
+      <a (click)="changePage(1)">Home</a>
+      <a (click)="changePage(2)">Favorites</a>
+    </nav>
+    <div class="header-title">
+      <span *ngIf="page == 1">HOME</span>
+      <span *ngIf="page == 2">FAVORITES</span>
+    </div>
+    <div style="display: flex;">
+      <form *ngIf="page == 1" (ngSubmit)="onSubmit()">
+        <label for="search">Search for a city:</label>
+        <input type="text" id="search" [formControl]="searchControl">
+        <button type="submit">Search</button>
+      </form>
+      <button class="logout-button" (click)="logout()">Logout</button>
+    </div>
+</header>

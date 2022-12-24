@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "technical-test-solvo": {
+      "hosting": {
+        "weather-app": [
+          "technical-test-solvo"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "technical-test-solvo"
+  }
+}

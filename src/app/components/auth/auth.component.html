@@ -1,0 +1,4 @@
+<div class="body">
+    <app-login (goToRegister)="changePageEvent($event)" *ngIf="!changePage"></app-login>
+    <app-register (goToLogin)="changePageEvent($event)" *ngIf="changePage"></app-register>
+</div>

@@ -1,0 +1,24 @@
+<div class="center">
+  <h1>Register</h1>
+  <form (ngSubmit)="register()">
+    <div class="txt_field">
+      <input type="text" [(ngModel)]="email" name="email" required>
+      <span></span>
+      <label>Email</label>
+    </div>
+    <p *ngIf="emailError" class="error">Enter a valid email</p>
+    <div class="txt_field">
+      <input type="password" [(ngModel)]="password" name="password" required>
+      <span></span>
+      <label>Password</label>
+    </div>
+    <div *ngIf="(email == '' || !email) || (password == '' || !password);else enabled" class="button"><span>Register</span></div>
+    <ng-template #enabled>
+      <input *ngIf="!inProgress" type="submit" value="Register">
+      <div *ngIf="inProgress" class="button" style="background: #2691d9;"><div class="loading"></div></div>
+    </ng-template>
+    <div class="signup_link">
+      <a (click)="changePage()">Sign in</a>
+    </div>
+  </form>
+</div>

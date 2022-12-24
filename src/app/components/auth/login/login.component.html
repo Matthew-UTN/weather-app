@@ -1,0 +1,25 @@
+<div class="center">
+  <h1>Login</h1>
+  <form (ngSubmit)="login()">
+    <div class="txt_field">
+      <input type="text" [(ngModel)]="email" name="email" required>
+      <span></span>
+      <label>Email</label>
+    </div>
+    <div class="txt_field">
+      <input type="password" [(ngModel)]="password" name="password" required>
+      <span></span>
+      <label>Password</label>
+    </div>
+    <div class="pass">Forgot Password?</div>
+    <p *ngIf="emailError" class="error">Email or Password incorrect</p>
+    <div *ngIf="(email == '' || !email) || (password == '' || !password);else enabled" class="button"><span>Login</span></div>
+    <ng-template #enabled>
+      <input *ngIf="!inProgress" type="submit" value="Login">
+      <div *ngIf="inProgress" class="button" style="background: #2691d9;"><div class="loading"></div></div>
+    </ng-template>
+    <div class="signup_link">
+      Don't have an account? <a (click)="changePage()">Signup</a>
+    </div>
+  </form>
+</div>

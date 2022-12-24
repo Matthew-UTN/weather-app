@@ -1,0 +1,48 @@
+.header{
+    position: absolute;
+    width: 100vw;
+}
+.home{
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../assets/Weather-Background.png);
+    height: calc(100vh - 80px);
+    padding-top: 80px;
+    overflow: hidden;
+}
+.card-holder{
+    padding: 3em;
+    display: flex;
+}
+
+.loading {
+    width: 42px;
+    height: 16.9px;
+    background: radial-gradient(circle closest-side,#4a3764 90%,#0000) 0%   50%,
+           radial-gradient(circle closest-side,#4a3764 90%,#0000) 50%  50%,
+           radial-gradient(circle closest-side,#4a3764 90%,#0000) 100% 50%;
+    background-size: calc(100%/3) 9.4px;
+    background-repeat: no-repeat;
+    animation: dots-7ar3yq 1s infinite linear;
+    position: absolute;
+    left: 47%;
+    top: 8em;
+}
+ 
+@keyframes dots-7ar3yq {
+    20% {
+       background-position: 0%   0%, 50%  50%,100%  50%;
+    }
+ 
+    40% {
+       background-position: 0% 100%, 50%   0%,100%  50%;
+    }
+ 
+    60% {
+       background-position: 0%  50%, 50% 100%,100%   0%;
+    }
+ 
+    80% {
+       background-position: 0%  50%, 50%  50%,100% 100%;
+    }
+}

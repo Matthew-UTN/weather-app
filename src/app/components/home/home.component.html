@@ -1,0 +1,12 @@
+<app-header (weather)="showResults($event)" (pn)="pageChange($event)" class="header"></app-header>
+<div class="home">
+    <div *ngIf="this.loading">
+        <div class="loading"></div>
+    </div>
+    <div *ngIf="groupCities && page == 2" class="card-holder">
+        <app-card (remove)="removeCity($event)" *ngFor="let city of groupCities" [cityWeather]="city" [favorite]="true"></app-card>
+    </div>
+    <div *ngIf="page == 1" class="card-holder">
+        <app-card (add)="addCity($event)" *ngIf="cityWeather" [cityWeather]="cityWeather"></app-card>
+    </div>
+</div>

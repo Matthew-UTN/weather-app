@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">
+      <h3>{{ cityWeather.name }} Weather</h3>
+    </div>
+    <div class="card-body">
+      <div class="temperature">
+        {{ cityWeather.main.temp }}°F
+      </div>
+      <div class="description">
+        {{ cityWeather.weather.description }}
+      </div>
+      <div class="additional-info">
+        <div>Feels like: {{ cityWeather.main.feels_like }}°F</div>
+        <div>Humidity: {{ cityWeather.main.humidity }}%</div>
+        <div>Wind: {{ cityWeather.wind.speed }} mph</div>
+      </div>
+      <div>
+        <button *ngIf="!favorite" (click)="addToFavorites(cityWeather)">Add to favorites</button>
+        <button *ngIf="favorite" (click)="removeFromFavorites(cityWeather)">Remove from favorites</button>
+      </div>
+    </div>
+  </div>
